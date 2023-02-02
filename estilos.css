@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
+body, html{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size: 62.5%;
+}
+
+header{
+  width: 100vw;
+  height: 100vh;
+  background: #e52685;
+  background: -webkit-linear-gradient(0deg, #e52685 0%, #f27121 50%, #e68a11 100%);
+  background: linear-gradient(0deg, #e52685 0%, #f27121 50%, #e68a11 100%);
+  position: relative;
+}
+
+@media (max-width: 36rem) {
+  header{
+    height: 50vh;
+  }
+}
+
+.gradient {
+  /* Primeiro passo: definir um degradê como fundo */
+  background-image: linear-gradient(0deg, #e52685 0%, #f27121 50%, #e68a11 100%);
+  
+  /* Segundo passo: apagar do fundo tudo que não estiver imediatamente atrás de texto */
+  background-clip: text;
+  -webkit-background-clip: text; /* Alguns navegadores precisam do prefixo */
+
+  /* Terceiro passo: apagar o texto, deixando apenas o fundo atrás dele */
+  -webkit-text-fill-color: transparent;
+
+  /* Cor que contraste com o degradê, caso o navegador não suporte `background-clip: text` */
+  color: black;
+  
+}
+h1{
+  text-align: center;
+  margin: 0;
+  padding-top: 10vh;
+  font-size: 6rem;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.waves{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.wavesfront{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+}
+
+.pato{
+  width: 15rem;
+  position: absolute;
+  right: 5;
+  bottom: 0;
+  z-index: 1;
+  animation: moveDuck 3s ease-in-out infinite alternate;
+}
+
+@keyframes moveDuck{
+  from{
+    transform: translateX(100px);
+  }
+}
+
+/*---Animation waves---*/
+.wave1{
+  animation: moveWave1 4s ease-in-out infinite alternate;
+  transform: scaleX(2);
+}
+
+@keyframes moveWave1 {
+  from{
+    transform: translateX(0px);
+  }
+}
+.wave2{
+  animation: moveWave2 4s ease-in-out infinite alternate;
+  transform: scaleX(2);
+}
+
+@keyframes moveWave2 {
+  from{
+    transform: translateX(0px);
+  }
+}
+
+.wave3{
+  animation: moveWave3 2s ease-in-out infinite alternate;
+  transform: scaleX(2);
+
+}
+
+@keyframes moveWave3 {
+  from{
+    transform: translateX(0px);
+  }
+}
+
+section{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 7rem;
+}
+
+.videosbg{
+  background: #00223d;
+  background: -webkit-linear-gradient(0deg, #003f72 0%, #00447c 50%, #007be0 100%);
+  background: linear-gradient(0deg, #003f72 0%, #00447c 50%, #007be0 100%);
+}
+
+.fotosbg{
+  background: #000320;
+  background: -webkit-linear-gradient(0deg, #000320 0%, #000853 50%, #003f72 100%);
+  background: linear-gradient(0deg, #000320 0%, #000853 50%, #003f72 100%);
+}
+
+.subtitulo{
+  font-size: 5rem;
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  color: #014379;
+  margin: 1.5rem;
+}
+
+.linha{
+  width: 70%;
+  height: 3px;
+  background-color: #014379;
+  margin-bottom: 5rem;
+}
+
+.quadrado, .foto{
+  width: 85%;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 3rem;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.60);
+}
+
+.quadrado video{
+  width: 100%;
+}
+
+.foto img{
+  width: 100%;
+}
+
+body span{
+    position: absolute;
+    bottom: -1200%;
+    background: transparent;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: animate 38s linear infinite;
+    z-index: 0;
+}
+
+body span::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: scale(0.25) translate(-70% , -70%);
+    background: radial-gradient(#fff, transparent);
+    border-radius: 50%;
+}
+
+@keyframes animate {
+    0%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    99%{
+        opacity: 1; 
+    }
+    100%{
+        transform: translateY(-11000%);
+        opacity: 0;
+    }
+}
